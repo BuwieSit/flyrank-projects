@@ -1,16 +1,53 @@
-# React + Vite
+# ☕ Dev Cafe Showcase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean, modern React + Vite application showcasing **Dev Cafe**—a developer-first coffee shop featuring high-speed Wi-Fi, desk power outlets, private meeting pods, an IT tech library, and tabletop board games.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 Cafe Amenities & Features
 
-## React Compiler
+* 📡 **500Mbps Fiber Wi-Fi:** Fast symmetrical internet for seamless remote work and coding.
+* 🔌 **Power Outlets at Every Desk:** AC sockets & 100W USB-C PD fast chargers (*Tailored for devs, open to all general customers*).
+* 🚪 **Private Soundproof Pods:** Tech-equipped rooms (4K monitors & whiteboards) for team standups and calls.
+* 📚 **IT Library & Tabletop Games:** 150+ software engineering books & board games for relaxing during compile times.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📁 File Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+dev-cafe/
+├── public/              # Static assets (favicon, icons)
+├── src/
+│   ├── components/      # Clean UI components
+│   │   ├── Navbar.jsx          # Header navigation & cart count
+│   │   ├── Hero.jsx            # Sleek hero section with key metrics
+│   │   ├── Amenities.jsx       # 2x2 Clean grid of venue features
+│   │   ├── Menu.jsx            # Drinks & pastry menu with dynamic pricing
+│   │   ├── MeetingRooms.jsx    # Soundproof pods reservation modal
+│   │   ├── LibraryAndGames.jsx # Tabbed IT books & board games lounge
+│   │   ├── CartDrawer.jsx      # Slide-out cart & checkout simulation
+│   │   └── Footer.jsx          # Minimalist footer & contact details
+│   ├── data/
+│   │   └── cafeData.js         # Centralized data structures
+│   ├── App.jsx                 # App root component & state
+│   ├── index.css               # Tailwind CSS v4 setup & custom scrollbars
+│   └── main.jsx                # React DOM entry point
+├── index.html           # HTML5 Entry with SEO Meta Tags
+├── package.json         # Project dependencies & scripts
+└── vite.config.js       # Vite & Tailwind CSS configuration
+```
+
+---
+
+## 🚀 Getting Started
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Start development server:**
+   ```bash
+   npm run dev
+   ```

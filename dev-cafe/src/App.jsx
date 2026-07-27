@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Amenities from './components/Amenities';
 import Menu from './components/Menu';
+import ProductForm from './components/ProductForm';
 import MeetingRooms from './components/MeetingRooms';
 import LibraryAndGames from './components/LibraryAndGames';
 import CartDrawer from './components/CartDrawer';
@@ -50,6 +51,17 @@ export default function App() {
 
   const totalCartCount = cartItems.reduce((acc, i) => acc + i.quantity, 0);
 
+  // Handle adding new coffee product from ProductForm
+  const handleAddProduct = (newProduct) => {
+    const productWithId = {
+      ...newProduct,
+      id: Date.now(),
+      image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"
+    };
+    // Dispatch custom event or alert feedback if needed
+    console.log("New product added:", productWithId);
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-amber-400 selection:text-slate-950">
       {/* Navigation Header */}
@@ -70,7 +82,7 @@ export default function App() {
           onOpenBooking={() => setIsBookingOpen(true)}
         />
 
-        {/* Cafe Amenities Section (Wi-Fi, Power Outlets, Meeting Pods, IT Books, Games) */}
+        {/* Cafe Amenities Section */}
         <Amenities
           onOpenBooking={() => setIsBookingOpen(true)}
         />
@@ -80,7 +92,14 @@ export default function App() {
           onAddToCart={handleAddToCart}
         />
 
-        {/* Private Soundproof Meeting Rooms */}
+        {/* Add New Coffee Product Form */}
+        <section id="add-product" className="py-8 bg-slate-950 border-b border-slate-800/80">
+          <div className="max-w-5xl mx-auto px-4">
+            <ProductForm onAddProduct={handleAddProduct} />
+          </div>
+        </section>
+
+        {/* Soundproof Meeting Rooms */}
         <MeetingRooms
           isOpen={isBookingOpen}
           onClose={(openState) => {
